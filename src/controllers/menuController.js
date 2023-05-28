@@ -1,15 +1,24 @@
-import Menu from "../models/menuModel.js";
-import MenuView from "../views/menuView.js";
-
 export default class MenuController {
-  constructor() {
-    this.menuModel = new Menu();
-    this.menuView = new MenuView();
+  constructor(menuModel, menuView) {
+    this.menuModel = menuModel;
+    this.menuView = menuView;
   }
 
-  handleMenuItemClick(itemId) {
-    this.menuModel.setSelectedIndex(itemId);
-    const selectedItem = this.menuModel.getSelectedItem();
-    this.menuView.showSection(selectedItem.sectionId);
+  init() {
+    this.menuView.init();
+    this.setupEventListeners();
+  }
+
+  setupEventListeners() {
+    // For now, let's just add keyboard events for up and down arrow keys
+    document.addEventListener("keydown", (event) => {
+      if (event.code === "ArrowUp") {
+        this.menuModel.selectPreviousItem();
+        this.menuView.updateView();
+      } else if (event.code === "ArrowDown") {
+        this.menuModel.selectNextItem();
+        this.menuView.updateView();
+      }
+    });
   }
 }
