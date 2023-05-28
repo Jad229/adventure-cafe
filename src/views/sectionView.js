@@ -7,12 +7,20 @@ export default class SectionView {
 
   init() {
     this.sectionContainer = document.createElement("div");
+    this.sectionContainer.id = this.sectionModel.sectionId;
     this.sectionContainer.className = "section-container";
+    this.sectionContainer.innerText = this.sectionModel.content;
     this.rootElement.appendChild(this.sectionContainer);
-    this.updateView();
+    this.hide(); // new line
   }
 
-  updateView() {
-    this.sectionContainer.innerText = this.sectionModel.content;
+  display() {
+    // new method
+    this.sectionContainer.style.display = "block";
+  }
+
+  hide() {
+    // new method
+    this.sectionContainer.style.display = "none";
   }
 }

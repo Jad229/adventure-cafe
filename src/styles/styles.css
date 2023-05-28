@@ -1,0 +1,33 @@
+body {
+  font-family: Arial, sans-serif;
+  background-image: url("../../assets/images/anime-tavern-darken.jpg");
+  background-size: cover;
+}
+
+.menu-container {
+  width: 200px;
+  margin: 0 auto;
+}
+
+.menu-item {
+  margin: 10px 0;
+  text-align: center;
+}
+
+.menu-item.small {
+  font-size: 14px;
+  color: gray;
+}
+
+.menu-item.large {
+  font-size: 20px;
+  color: black;
+}
+
+.section-container {
+  width: 500px;
+  margin: 20px auto;
+  border: 1px solid #ddd;
+  padding: 20px;
+  text-align: center;
+}

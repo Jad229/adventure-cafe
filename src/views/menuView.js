@@ -1,8 +1,10 @@
 export default class MenuView {
-  constructor(menuModel, rootElementId) {
+  constructor(menuModel, rootElementId, sectionViews) {
     this.menuModel = menuModel;
     this.rootElement = document.getElementById(rootElementId);
     this.menuContainer = null;
+    this.sectionViews = sectionViews;
+    this.currentSectionView = null;
   }
 
   init() {
@@ -34,6 +36,17 @@ export default class MenuView {
     if (nextItem) {
       const nextElem = this.createMenuItem(nextItem, "small");
       this.menuContainer.appendChild(nextElem);
+    }
+
+    // Update displayed section:
+    if (this.currentSectionView) {
+      this.currentSectionView.hide(); // will need to add this method to SectionView
+    }
+
+    this.currentSectionView = this.sectionViews.get(selectedItem.sectionId);
+    this.currentSectionView = this.sectionViews.get(selectedItem.sectionId);
+    if (this.currentSectionView) {
+      this.currentSectionView.display(); // will need to add this method to SectionView
     }
   }
 
