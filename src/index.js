@@ -6,6 +6,7 @@ import MenuView from "./views/menuView";
 import SectionView from "./views/sectionView";
 
 const mainMenu = new MenuModel();
+
 mainMenu.addItem({ name: "Menu", sectionId: "menu-section" });
 mainMenu.addItem({ name: "About Us", sectionId: "about-section" });
 mainMenu.addItem({ name: "Specials", sectionId: "specials-section" });

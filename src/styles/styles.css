@@ -2,11 +2,16 @@ body {
   font-family: Arial, sans-serif;
   background-image: url("../../assets/images/anime-tavern-darken.jpg");
   background-size: cover;
+  background-blend-mode: darken;
 }
 
 .menu-container {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
   width: 200px;
-  margin: 0 auto;
+  margin-right: 5%;
 }
 
 .menu-item {
@@ -15,13 +20,13 @@ body {
 }
 
 .menu-item.small {
-  font-size: 14px;
+  font-size: 1.1rem;
   color: gray;
 }
 
 .menu-item.large {
-  font-size: 20px;
-  color: black;
+  font-size: 3rem;
+  color: white;
 }
 
 .section-container {
