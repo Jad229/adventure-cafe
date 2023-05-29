@@ -42,8 +42,6 @@ export default class MenuView {
     if (this.currentSectionView) {
       this.currentSectionView.hide(); // will need to add this method to SectionView
     }
-
-    this.currentSectionView = this.sectionViews.get(selectedItem.sectionId);
     this.currentSectionView = this.sectionViews.get(selectedItem.sectionId);
     if (this.currentSectionView) {
       this.currentSectionView.display(); // will need to add this method to SectionView

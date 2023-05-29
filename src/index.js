@@ -22,7 +22,7 @@ const sectionModels = [
 const sectionViews = new Map();
 sectionModels.forEach((model) => {
   const view = new SectionView(model, "app");
-  view.init(model.id); // Initialize each view
+  view.init(); // Initialize each view
   sectionViews.set(model.sectionId, view);
 });
 
