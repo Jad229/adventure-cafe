@@ -34,11 +34,17 @@ body {
 }
 
 .section-container {
-  width: 500px;
+  position: absolute;
+  top: 10%;
+  left: 0;
+  transform: translateX(20%);
+  width: 1000px;
   margin: 20px auto;
   border: 1px solid #ddd;
   padding: 20px;
   text-align: center;
+  background-color: #f8d482;
+  height: 750px;
 }
 
 .arrow-button {
@@ -61,4 +67,25 @@ body {
 }
 .arrow-button.down {
   transform: rotate(90deg);
+}
+
+.section-banner {
+  background-image: url("../../assets/images/banner.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: transparent;
+  margin: auto;
+  width: 50%;
+  height: 18%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.meal {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
 }

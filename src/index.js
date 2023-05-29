@@ -1,7 +1,10 @@
 import MenuController from "./controllers/menuController";
+import meals from "./data/meals.js";
 import MenuModel from "./models/MenuModel";
 import SectionModel from "./models/sectionModel";
 import "./styles/styles.css";
+import AboutSectionView from "./views/aboutSectionView";
+import MenuSectionView from "./views/menuSectionView";
 import MenuView from "./views/menuView";
 import SectionView from "./views/sectionView";
 
@@ -13,7 +16,7 @@ mainMenu.addItem({ name: "Specials", sectionId: "specials-section" });
 mainMenu.addItem({ name: "Contact", sectionId: "contact-section" });
 
 const sectionModels = [
-  new SectionModel("menu-section", "Content for Menu"),
+  new SectionModel("menu-section", meals), // pass the meals data here
   new SectionModel("about-section", "Content for About Us"),
   new SectionModel("specials-section", "Content for Specials"),
   new SectionModel("contact-section", "Content for Contact"),
@@ -21,8 +24,22 @@ const sectionModels = [
 
 const sectionViews = new Map();
 sectionModels.forEach((model) => {
-  const view = new SectionView(model, "app");
-  view.init(); // Initialize each view
+  let view;
+
+  // create the correct view based on the sectionId
+  switch (model.sectionId) {
+    case "menu-section":
+      view = new MenuSectionView(model, "app");
+      break;
+    case "about-section":
+      view = new AboutSectionView(model, "app");
+      break;
+    default:
+      view = new SectionView(model, "app");
+      break;
+  }
+
+  view.init();
   sectionViews.set(model.sectionId, view);
 });
 
