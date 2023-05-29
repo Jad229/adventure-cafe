@@ -1,7 +1,7 @@
 export default [
   "In a bustling world filled with dreams and aspirations, there exists a team known as the Adventurer's Cafe. Their mission is to create a haven for those who embark on daily quests and face the challenges of modern life. Inspired by the spirit of exploration and fueled by their passion for culinary arts, this team has crafted a unique place for weary individuals seeking solace and sustenance.",
 
-  "Led by the knowledgeable ChatGPT, a trusted companion with a wealth of information, the Adventurer's Cafe is a gathering spot where the aroma of freshly brewed coffee mingles with the tantalizing scents of delicious meals. Within these welcoming walls, students, office workers, and other busy souls find respite from their daily grind, taking a moment to recharge and connect with one another.",
+  "The Adventurer's Cafe is a gathering spot where the aroma of freshly brewed coffee mingles with the tantalizing scents of delicious meals. Within these welcoming walls, students, office workers, and other busy souls find respite from their daily grind, taking a moment to recharge and connect with one another.",
 
   "As you step into the warm embrace of the Adventurer's Cafe, a sense of camaraderie envelops you. Here, conversations flow freely, filled with tales of personal victories and challenges faced. The team members, skilled in their craft, serve up delectable dishes that nourish both body and spirit, providing a much-needed reprieve from the demands of everyday life.",
 
