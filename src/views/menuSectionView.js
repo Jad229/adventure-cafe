@@ -1,5 +1,4 @@
 import SectionView from "./sectionView";
-const bannerImagePath = "../../assets/images/banner.png";
 
 export default class MenuSectionView extends SectionView {
   updateView() {
@@ -18,7 +17,6 @@ export default class MenuSectionView extends SectionView {
 
     // add the meals to the meals container
     this.sectionModel.content.forEach((meal) => {
-      console.log(meal);
       const mealElem = this.createMealElement(meal);
       this.mealsContainer.appendChild(mealElem);
     });

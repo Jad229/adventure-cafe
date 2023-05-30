@@ -1,5 +1,6 @@
 import MenuController from "./controllers/menuController";
 import meals from "./data/meals.js";
+import specials from "./data/specials";
 import MenuModel from "./models/MenuModel";
 import SectionModel from "./models/sectionModel";
 import "./styles/styles.css";
@@ -7,6 +8,7 @@ import AboutSectionView from "./views/aboutSectionView";
 import MenuSectionView from "./views/menuSectionView";
 import MenuView from "./views/menuView";
 import SectionView from "./views/sectionView";
+import SpecialsSectionView from "./views/specialsSectionView";
 
 const mainMenu = new MenuModel();
 
@@ -18,7 +20,7 @@ mainMenu.addItem({ name: "Contact", sectionId: "contact-section" });
 const sectionModels = [
   new SectionModel("menu-section", meals), // pass the meals data here
   new SectionModel("about-section", "Content for About Us"),
-  new SectionModel("specials-section", "Content for Specials"),
+  new SectionModel("specials-section", specials),
   new SectionModel("contact-section", "Content for Contact"),
 ];
 
@@ -33,6 +35,9 @@ sectionModels.forEach((model) => {
       break;
     case "about-section":
       view = new AboutSectionView(model, "app");
+      break;
+    case "specials-section":
+      view = new SpecialsSectionView(model, "app");
       break;
     default:
       view = new SectionView(model, "app");
