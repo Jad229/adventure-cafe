@@ -5,6 +5,7 @@ import MenuModel from "./models/MenuModel";
 import SectionModel from "./models/sectionModel";
 import "./styles/styles.css";
 import AboutSectionView from "./views/aboutSectionView";
+import ContactSectionView from "./views/contactSectionView";
 import MenuSectionView from "./views/menuSectionView";
 import MenuView from "./views/menuView";
 import SectionView from "./views/sectionView";
@@ -38,6 +39,9 @@ sectionModels.forEach((model) => {
       break;
     case "specials-section":
       view = new SpecialsSectionView(model, "app");
+      break;
+    case "contact-section":
+      view = new ContactSectionView(model, "app");
       break;
     default:
       view = new SectionView(model, "app");
