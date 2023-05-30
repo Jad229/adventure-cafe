@@ -51,7 +51,7 @@ export default [
     stats: {
       strength: 10,
       energy: 6,
-      aggression: 9,
+      dexterity: 9,
     },
   },
   {
@@ -62,7 +62,7 @@ export default [
     stats: {
       agility: 10,
       energy: 7,
-      stealth: 8,
+      strength: 8,
     },
   },
   {
@@ -84,7 +84,7 @@ export default [
     stats: {
       intelligence: 10,
       energy: 9,
-      magic: 8,
+      charisma: 8,
     },
   },
   {
@@ -106,7 +106,7 @@ export default [
     stats: {
       dexterity: 9,
       energy: 7,
-      accuracy: 8,
+      focus: 8,
     },
   },
 ];
