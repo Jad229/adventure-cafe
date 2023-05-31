@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "adventurer guild cafe themed web app",
   "main": "index.js",
+  "homepage": "https://jad229.github.io/adventure-cafe/",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "watch": "webpack --watch",
