@@ -14,6 +14,7 @@ export default class AboutSectionView extends SectionView {
     // add a container for all of our paragraphs
     this.contentContainer = document.createElement("div");
     this.contentContainer.classList.add("about-content-container");
+    this.contentContainer.classList.add("section-inner-container");
     this.sectionContainer.appendChild(this.contentContainer);
 
     // create paragraphs for our story

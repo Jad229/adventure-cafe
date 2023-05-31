@@ -28,7 +28,7 @@ export default class SectionView {
   }
 
   display() {
-    this.sectionContainer.style.display = "block";
+    this.sectionContainer.style.display = "flex";
   }
 
   hide() {

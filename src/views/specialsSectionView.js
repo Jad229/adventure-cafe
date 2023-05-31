@@ -13,6 +13,7 @@ export default class SpecialsSectionView extends SectionView {
     // add specials container
     this.specialsContainer = document.createElement("div");
     this.specialsContainer.classList.add("specials-container");
+    this.specialsContainer.classList.add("section-inner-container");
     this.sectionContainer.appendChild(this.specialsContainer);
 
     //add the specials to the specials container

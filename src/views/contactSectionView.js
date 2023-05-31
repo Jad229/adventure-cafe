@@ -12,6 +12,7 @@ export default class ContactSectionView extends SectionView {
     // add a container for our contact info
     this.contactContainer = document.createElement("div");
     this.contactContainer.classList.add("contact-container");
+    this.contactContainer.classList.add("section-inner-container");
 
     this.contactContainer.innerHTML = `
       <div class="address-wrapper">

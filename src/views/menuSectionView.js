@@ -13,6 +13,7 @@ export default class MenuSectionView extends SectionView {
     // adding the meals container to the menu-section
     this.mealsContainer = document.createElement("div");
     this.mealsContainer.classList.add("meals-container");
+    this.mealsContainer.classList.add("section-inner-container");
     this.sectionContainer.appendChild(this.mealsContainer);
 
     // add the meals to the meals container
