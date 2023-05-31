@@ -11,6 +11,12 @@ import MenuView from "./views/menuView";
 import SectionView from "./views/sectionView";
 import SpecialsSectionView from "./views/specialsSectionView";
 
+window.addEventListener("DOMContentLoaded", (event) => {
+  setTimeout(() => {
+    document.getElementById("quest-board").classList.add("show");
+  }, 10); // adding a small delay before adding the show class
+});
+
 const mainMenu = new MenuModel();
 
 mainMenu.addItem({ name: "Menu", sectionId: "menu-section" });
@@ -25,34 +31,43 @@ const sectionModels = [
   new SectionModel("contact-section", "Content for Contact"),
 ];
 
-const sectionViews = new Map();
-sectionModels.forEach((model) => {
-  let view;
+const acceptButton = document.getElementById("accept-button");
+const questBoard = document.getElementById("quest-board");
+const app = document.getElementById("app");
 
-  // create the correct view based on the sectionId
-  switch (model.sectionId) {
-    case "menu-section":
-      view = new MenuSectionView(model, "app");
-      break;
-    case "about-section":
-      view = new AboutSectionView(model, "app");
-      break;
-    case "specials-section":
-      view = new SpecialsSectionView(model, "app");
-      break;
-    case "contact-section":
-      view = new ContactSectionView(model, "app");
-      break;
-    default:
-      view = new SectionView(model, "app");
-      break;
-  }
+acceptButton.addEventListener("click", () => {
+  questBoard.style.display = "none";
+  app.style.display = "block";
 
-  view.init();
-  sectionViews.set(model.sectionId, view);
+  const sectionViews = new Map();
+  sectionModels.forEach((model) => {
+    let view;
+
+    // create the correct view based on the sectionId
+    switch (model.sectionId) {
+      case "menu-section":
+        view = new MenuSectionView(model, "app");
+        break;
+      case "about-section":
+        view = new AboutSectionView(model, "app");
+        break;
+      case "specials-section":
+        view = new SpecialsSectionView(model, "app");
+        break;
+      case "contact-section":
+        view = new ContactSectionView(model, "app");
+        break;
+      default:
+        view = new SectionView(model, "app");
+        break;
+    }
+
+    view.init();
+    sectionViews.set(model.sectionId, view);
+  });
+
+  const menuView = new MenuView(mainMenu, "app", sectionViews);
+  const menuController = new MenuController(mainMenu, menuView);
+
+  menuController.init();
 });
-
-const menuView = new MenuView(mainMenu, "app", sectionViews);
-const menuController = new MenuController(mainMenu, menuView);
-
-menuController.init();

@@ -1,16 +1,42 @@
+/*========================================
+=               Asset Fonts              =
+==========================================*/
+
 @font-face {
   font-family: "RpgFont";
   src: url("../../assets/fonts/FantaisieArtistique.ttf") format("truetype"),
     url("../../assets/fonts/FantaisieArtistique.otf") format("opentype");
-  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Caslon-bold";
+  src: url("../../assets/fonts/caslon-antique.bold.ttf") format("truetype");
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Caslon";
+  src: url("../../assets/fonts/caslon-antique.regular.ttf") format("truetype");
   font-style: normal;
 }
 
 @font-face {
   font-family: "VinqueFont";
   src: url("../../assets/fonts/vinque\ rg.otf") format("opentype");
-  font-weight: 400;
   font-style: normal;
+}
+
+/*========================================
+=               Main Styles              =
+==========================================*/
+html,
+body {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 body {
@@ -18,7 +44,93 @@ body {
   background-image: url("../../assets/images/anime-tavern-darken.jpg");
   background-size: cover;
   background-repeat: no-repeat;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
+
+.quest-board {
+  width: 100%;
+  height: 80%;
+  background: url("../../assets/images/quest-board2.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: transparent;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 2s ease-in;
+}
+
+.quest-board > * {
+  width: 27%;
+  font-family: VinqueFont;
+  color: white;
+  font-size: 2rem;
+}
+
+.quest-board > h1 {
+  font-size: 4rem;
+}
+
+.quest-board > button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.quest-board > button:hover {
+  cursor: pointer;
+  background-color: #978d05;
+  border: #f5f5f5 1px solid;
+}
+#app {
+  display: none;
+}
+
+#quest-board.show {
+  opacity: 1;
+}
+
+/*========================================
+=         Scroll Bar Styles              =
+==========================================*/
+
+/* This will change the scrollbar's width and background */
+::-webkit-scrollbar {
+  width: 10px;
+  background-color: #f5f5f5;
+}
+
+/* This changes the actual 'thumb' of the scrollbar */
+::-webkit-scrollbar-thumb {
+  background-color: #f90;
+  background-image: -webkit-linear-gradient(
+    45deg,
+    rgba(255, 255, 255, 0.2) 25%,
+    transparent 25%,
+    transparent 50%,
+    rgba(255, 255, 255, 0.2) 50%,
+    rgba(255, 255, 255, 0.2) 75%,
+    transparent 75%,
+    transparent
+  );
+}
+
+/* This changes the 'track' of the scrollbar */
+::-webkit-scrollbar-track {
+  background-color: #f5f5f5;
+}
+
+/*========================================
+=           Side Menu Styles              =
+==========================================*/
 
 .menu-container {
   font-family: RpgFont;
@@ -49,41 +161,6 @@ body {
   color: white;
 }
 
-.section-container {
-  font-family: VinqueFont;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  position: absolute;
-  top: 5%;
-  left: 0;
-  transform: translateX(30%);
-  width: 50%;
-  height: 80%;
-  padding: 2%;
-  text-align: center;
-  background: url("../../assets/images/quest-board.png");
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-color: transparent;
-}
-
-.section-inner-container {
-  width: 50%;
-  margin: auto;
-}
-
-.about-content-container {
-  width: 75%;
-}
-
-.meals-container {
-  width: 77%;
-  font-weight: bold;
-}
-
 .arrow-button {
   background-image: url("../../assets/images/arrow.png");
   background-size: contain;
@@ -106,6 +183,32 @@ body {
   transform: rotate(90deg);
 }
 
+/*========================================
+=           Section View Styles          =
+==========================================*/
+
+.section-container {
+  font-family: Caslon-bold;
+  font-weight: bold;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  position: absolute;
+  top: 5%;
+  left: 0;
+  transform: translateX(30%);
+  width: 50%;
+  height: 80%;
+  padding: 2%;
+  text-align: center;
+  background: url("../../assets/images/quest-board.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: transparent;
+}
+
 .section-banner {
   background-image: url("../../assets/images/banner.png");
   background-size: contain;
@@ -118,6 +221,26 @@ body {
   justify-content: center;
   align-items: center;
   font-family: RpgFont;
+  font-size: 1.2rem;
+}
+
+.section-inner-container {
+  font-size: 1.5rem;
+  max-width: 60%;
+  max-height: 65%;
+  overflow-y: auto;
+  scrollbar-width: thin; /* "auto" or "thin"  */
+  scrollbar-color: #f90 #f5f5f5; /* thumb and track color */
+  margin: 0 auto 3%;
+}
+
+/*========================================
+=            Menu Section Styles         =
+==========================================*/
+
+.meals-container {
+  font-family: Caslon;
+  width: 77%;
 }
 
 .meal {
@@ -126,3 +249,24 @@ body {
   align-items: center;
   gap: 10px;
 }
+
+/*========================================
+=           About Section Styles         =
+==========================================*/
+
+.about-content-container {
+  font-family: Caslon-bold;
+  width: 75%;
+}
+
+/*========================================
+=         Contact Section Styles         =
+==========================================*/
+.contact-container {
+  max-height: 80%;
+  font-size: 1.5rem;
+}
+
+/*========================================
+=        Specials Section Styles         =
+==========================================*/
